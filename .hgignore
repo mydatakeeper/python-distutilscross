@@ -1,2 +1,4 @@
 syntax: glob
-*.py
+*.pyc
+distutilscross.egg-info
+dist
