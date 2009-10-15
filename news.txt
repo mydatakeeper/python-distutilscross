@@ -1,0 +1,7 @@
+News for distutilscross
+=======================
+
+0.1
+---
+
+* Initial release 
