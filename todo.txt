@@ -1,0 +1,5 @@
+To Do
+=====
+
+* Make python-config.py provide sane values for extensions that don't use
+  distutils. (I'm looking at you dbus-python)

@@ -7,6 +7,11 @@ You need to export PYTHONXCPREFIX and LDFLAGS, something like::
     $ export PYTHONXCPREFIX=/opt/eldk/ppc_4xxFP/usr
     $ export LDFLAGS="-L/opt/eldk/ppc_4xxFP/lib -L/opt/eldk/ppc_4xxFP/usr/lib"
 
+Some build environments also need you to specify the CC and LDSHARED
+environment variables::
+    $ export CC="ppc_4xxFP-gcc -pthread"
+    $ export LDSHARED="$CC -shared"
+
 It should pick up the correct include paths from the PYTHONXCPREFIX. To build
 use::
     $ python setup.py build -x
@@ -16,7 +21,7 @@ To make a cross compiled egg::
 """
 setup(
     name = "distutilscross",
-    version = "0.1",
+    version = "0.2",
     description="Cross Compile Python Extensions",
     long_description=long_description,
     classifiers=[

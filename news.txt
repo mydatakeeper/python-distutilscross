@@ -1,6 +1,12 @@
 News for distutilscross
 =======================
 
+0.2
+---
+
+* Fix some documentation
+* Remove vestigial code from some early testing
+
 0.1
 ---
 
