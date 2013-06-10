@@ -16,6 +16,7 @@ class build(_build):
         if self.cross_compile and os.environ.has_key('PYTHONXCPREFIX'):
             prefix = os.environ['PYTHONXCPREFIX']
             sysconfig.get_python_lib = get_python_lib
+            sysconfig.get_python_inc = get_python_inc
             sysconfig.PREFIX = prefix
             sysconfig.EXEC_PREFIX = prefix
             # reinitialize variables
@@ -32,4 +33,12 @@ def get_python_lib(plat_specific=0, standard_lib=0, prefix=None):
         prefix = os.environ['PYTHONXCPREFIX']
 
     return _get_python_lib(plat_specific, standard_lib, prefix)
+
+_get_python_inc = sysconfig.get_python_inc
+def get_python_inc(plat_specific=0, prefix=None):
+    if os.environ.has_key('PYTHONXCPREFIX'):
+        print "Setting include prefix"
+        prefix = os.environ['PYTHONXCPREFIX']
+
+    return _get_python_inc(plat_specific, prefix)
 
