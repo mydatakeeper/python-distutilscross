@@ -1,4 +1,3 @@
-syntax: glob
 *.pyc
 distutilscross.egg-info
-dist
+build/
